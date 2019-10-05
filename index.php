@@ -1,3 +1,6 @@
+<?php 
+include_once('connection.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,12 +10,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <script src="script.js"></script>
     <title>My Phone Book</title>
   </head>
   <body style="background-color: rgb(8, 72, 97)">
     <div class="container">
         <div class="jumbotron bg-primary">
+        <div class="alert alert-success text-center font-weight-bold h1" style="margin-top:0px">
+        MyPhone Book 
+        </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-warning">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
@@ -37,13 +43,16 @@
                                   <a class="nav-link disabled" href="#">Disabled</a>
                                 </li> -->
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-outline-success">Add contact</button>
+                                    <button type="button" class="btn btn-outline-success" >Add contact</button>
                                 </li>
                               </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Contact</button>
                     </form>
+                    <div class="alert alert-primary">
+                      form
+                    </div>
                 
                 
                 
