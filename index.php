@@ -10,7 +10,7 @@
 
     <title>My Phone Book</title>
   </head>
-  <body>
+  <body style="background-color: rgb(8, 72, 97)">
     <div class="container">
         <div class="jumbotron bg-primary">
             <nav class="navbar navbar-expand-lg navbar-light bg-warning">
@@ -50,7 +50,35 @@
                 </div>
         </div>
         <div class="jumbotron bg-primary">
-
+            <table class="table table-hover table-dark">
+                <thead class="text-success font-weight-bold text-uppercase">
+                    <tr>
+                        <th class="col-1" scope="col">[#]</th>
+                        <th class="col" scope="col">[contact]</th>
+                        <th class="col-1" scope="col">Edit</th>
+                        <th class="col-1" scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <th scope="row">[]</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                    </tr>
+                    <tr>
+                            <th scope="row">[]</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">[]</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
