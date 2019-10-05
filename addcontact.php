@@ -16,28 +16,29 @@ include_once('connection.php');
     <title>Add contact</title>
 </head>
 <body>
-    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Contact</button>
-                    </form>
-                    <div class="alert alert-primary">
-                    <form>
-                          <div class="form-inline">
-                            <label for="exampleInputname">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name" name="input_name">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                          </div>
-                          <div class="form-inline">
-                            <label for="exampleInputNumber">Number</label>
-                            <input type="number" class="form-control" id="exampleInputNumber" placeholder="Number" name="input_number">
-                          </div>
-                          <div class="form-inline">
-                            <label for="exampleInputEmail">E-mail</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" placeholder="enter e-mail" name="input_email">
-                          </div>
-                          <button type="submit" class="btn btn-primary" name="submitContact">Submit</button>
-                    </form>
+    <div class="container">
+        div.alert
+        <div class="alert alert-primary">
+        
+            <form>
+                <div class="form-group">
+                <label for="exampleInputname">Name</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name" name="input_name">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                <label for="exampleInputEmail">E-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail" placeholder="enter e-mail" name="input_email">
+                </div>
+                <div class="form-inline">
+                <!-- <label for="exampleInputNumber">Number</label> -->
+                <input type="text" class="form-control" id="exampleInputNumber" placeholder="Number" name="input_number">
+                    <button type="submit" class="btn btn-primary" name="submitContact" style="margin-left:10px;">Submit</button>
+                </div>
+            </form>
+        </div> <!-- container ends-->
 
+    </div>
 
 
 

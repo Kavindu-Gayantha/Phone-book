@@ -20,7 +20,7 @@ include_once ('connection.php') ;
              MyPhone Book 
           </div>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,15 +28,15 @@ include_once ('connection.php') ;
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <!-- <a class="nav-link" href="#">Link</a> -->
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
-                  </a>
+                  </a> -->
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
@@ -45,7 +45,24 @@ include_once ('connection.php') ;
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
+                  <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
+                </li>
+                <li>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Add contact
+                </button>
+                <!-- hiddin div starts -->
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                      <form action="index.php" method="post" class="form-inline" style="width:100%">
+                        <label for="name">Name :</label><input type="text" placeholder="Enter Name" name="input_name">
+                        <label sytle="margin-left:2%" for="number">Number :</label><input type="text" placeholder="Enter Number" name="input_number"> <br>
+                        <input type="email" placeholder="Enter email" name="input_email" style="margin-left:7% ">
+                        <p> <br> <input class="btn btn-primary" type="submit"name="addContact" value="Add contact" style="margin-left:3%"></p>
+                      </form>
+                    </div>
+                </div>
+                <!-- hiddin div stops -->
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -54,6 +71,28 @@ include_once ('connection.php') ;
               </form>
             </div>
           </nav>
+
+
+          <?php
+          $name=$_POST['input_name'];
+          $number=$_POST['input_number'];
+          $email = $_POST['input_email'];
+          if(isset($_POST['addContact']))
+          {
+
+            $query= "INSERT INTO contacts(name,email,number)VALUES('$name','$email','$number')";
+            $results = mysqli_query('$connection','$query');
+            if($results)
+            {
+              echo "successss";
+            }
+            else 
+            {
+              echo "fuck";
+            }
+          }
+
+          ?>
             
                 
                 
