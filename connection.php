@@ -1,3 +1,3 @@
 <?php 
-    $connection = mysqli_connection("localhost","root","","mycontact") or die ("connection failed");
+    $connection = mysqli_connect("localhost","root","","mycontact") or die ("connection failed");
 ?>
