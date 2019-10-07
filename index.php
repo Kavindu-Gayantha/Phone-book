@@ -19,7 +19,7 @@ include_once ('connection.php') ;
           <div class="alert alert-success text-center font-weight-bold h1" style="margin-top:0px">
              MyPhone Book 
           </div>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -48,11 +48,11 @@ include_once ('connection.php') ;
                   <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
                 </li>
                 <li>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addContactModal">
                   Add contact
                 </button>
                 <!-- hiddin div starts -->
-                <div class="collapse" id="collapseExample">
+                <!-- <div class="collapse" id="collapseExample">
                     <div class="card card-body">
                       <form action="index.php" method="post" class="form-inline" style="width:100%">
                         <label for="name">Name :</label><input type="text" placeholder="Enter Name" name="input_name">
@@ -61,7 +61,7 @@ include_once ('connection.php') ;
                         <p> <br> <input class="btn btn-primary" type="submit"name="addContact" value="Add contact" style="margin-left:3%"></p>
                       </form>
                     </div>
-                </div>
+                </div> -->
                 <!-- hiddin div stops -->
                 </li>
               </ul>
@@ -72,27 +72,32 @@ include_once ('connection.php') ;
             </div>
           </nav>
 
-
-          <?php
-          $name=$_POST['input_name'];
-          $number=$_POST['input_number'];
-          $email = $_POST['input_email'];
-          if(isset($_POST['addContact']))
-          {
-
-            $query= "INSERT INTO contacts(name,email,number)VALUES('$name','$email','$number')";
-            $results = mysqli_query('$connection','$query');
-            if($results)
-            {
-              echo "successss";
-            }
-            else 
-            {
-              echo "fuck";
-            }
-          }
-
-          ?>
+<!-- modal starts for form elements -->
+    <div class="modal" tabindex = -1 role ="dialog" id="addContactModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Contact</h5>
+            <button class="close" type="button" data-dismiss="modal" area-label="Close">
+              <span area-hidden="true">&times;</span>
+            </button>
+          </div><!-- header ends-->
+          <div class="modal-body">
+            <!-- form here -->
+            <form action="index.php" method="POST">
+          
+          </div>
+          <div class="modal-footer">
+          <input class="btn btn-primary" type="submit" name="addContact" value="Add contact" >
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <!-- modal ends here -->
+          
             
                 
                 
