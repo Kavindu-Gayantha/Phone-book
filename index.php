@@ -75,7 +75,7 @@ include_once ('connection.php') ;
 <!-- modal starts for form elements -->
     <div class="modal" tabindex = -1 role ="dialog" id="addContactModal">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content text-success "style="font-weight:bold">
           <div class="modal-header">
             <h5 class="modal-title">Add Contact</h5>
             <button class="close" type="button" data-dismiss="modal" area-label="Close">
@@ -85,10 +85,23 @@ include_once ('connection.php') ;
           <div class="modal-body">
             <!-- form here -->
             <form action="index.php" method="POST">
-          
+              <div class="form-group">
+                <label for="name" >Name :</label>
+                <input type="text" class="form-control" name="input_name" placeholder="enter name">
+              </div> <!--form group ends--> 
+              <div class="form-group">
+                <label for="number" >Number :</label>
+                <input type="text" class="form-control" name="input_number" placeholder="enter number">
+              </div> <!--form group ends-->    
+              <div class="form-group">
+              <label for="name" >Email :</label>
+                <input type="email" class="form-control" name="input_email" placeholder="enter email">
+              </div>    
+
           </div>
           <div class="modal-footer">
-          <input class="btn btn-primary" type="submit" name="addContact" value="Add contact" >
+          <input class="btn btn-secondary" type="submit" name="addContact" value="Add contact" >
+          <input class="btn btn-danger" type="submit" name="cancel" value="cancel" data-dismiss="modal" area-label="Close"  >
   
             </form>
           </div>
