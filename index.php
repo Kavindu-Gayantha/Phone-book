@@ -1,5 +1,6 @@
 <?php 
-include_once ('connection.php') ;
+include_once('connection.php');
+include_once('process.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +16,7 @@ include_once ('connection.php') ;
   </head>
   <body style="background-color: rgb(8, 72, 97)">
     <div class="container">
-        <div class="jumbotron bg-primary">
+        <div class="jumbotron bg-primary ">
           <div class="alert alert-success text-center font-weight-bold h1" style="margin-top:0px">
              MyPhone Book 
           </div>
@@ -87,15 +88,15 @@ include_once ('connection.php') ;
             <form action="index.php" method="POST">
               <div class="form-group">
                 <label for="name" >Name :</label>
-                <input type="text" class="form-control" name="input_name" placeholder="enter name">
+                <input type="text" class="form-control" name="inputname" placeholder="enter name">
               </div> <!--form group ends--> 
               <div class="form-group">
                 <label for="number" >Number :</label>
-                <input type="text" class="form-control" name="input_number" placeholder="enter number">
+                <input type="text" class="form-control" name="inputnumber" placeholder="enter number">
               </div> <!--form group ends-->    
               <div class="form-group">
               <label for="name" >Email :</label>
-                <input type="email" class="form-control" name="input_email" placeholder="enter email">
+                <input type="email" class="form-control" name="inputemail" placeholder="enter email">
               </div>    
 
           </div>
