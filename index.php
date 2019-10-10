@@ -144,8 +144,12 @@ include_once('process.php');
                             <td><?php echo $row['name'];?></td>
                             <td><?php echo "0".$row['number'];?></td>
                             <td><?php echo $row['email'];?></td>
-                            <td>edit</td>
-                            <td>delete</td>
+                            <td>
+                              <button class="btn btn-success" type="button">EDIT</button>
+                            </td>
+                            <td>
+                              <button class="btn btn-danger" type="button">DELETE</button>
+                            </td>
                     </tr>
                   
                 </tbody>
