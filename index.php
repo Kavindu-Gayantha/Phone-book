@@ -52,18 +52,7 @@ include_once('process.php');
                 <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addContactModal">
                   Add contact
                 </button>
-                <!-- hiddin div starts -->
-                <!-- <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                      <form action="index.php" method="post" class="form-inline" style="width:100%">
-                        <label for="name">Name :</label><input type="text" placeholder="Enter Name" name="input_name">
-                        <label sytle="margin-left:2%" for="number">Number :</label><input type="text" placeholder="Enter Number" name="input_number"> <br>
-                        <input type="email" placeholder="Enter email" name="input_email" style="margin-left:7% ">
-                        <p> <br> <input class="btn btn-primary" type="submit"name="addContact" value="Add contact" style="margin-left:3%"></p>
-                      </form>
-                    </div>
-                </div> -->
-                <!-- hiddin div stops -->
+               
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -111,6 +100,51 @@ include_once('process.php');
     
     </div>
     <!-- modal ends here -->
+
+    <!-- ########################################################################################################################################################################## -->
+
+
+    <!-- edit modal starts for form elements -->
+    <div class="modal" tabindex = -1 role ="dialog" id="editModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-success "style="font-weight:bold">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Contact</h5>
+            <button class="close" type="button" data-dismiss="modal" area-label="Close">
+              <span area-hidden="true">&times;</span>
+            </button>
+          </div><!-- header ends-->
+          <div class="modal-body">
+            <!-- form here -->
+            <form action="process.php" method="POST">
+              <div class="form-group">
+                <label for="name" >Name :</label>
+                <input type="text" class="form-control" name="inputname" placeholder="enter name">
+              </div> <!--form group ends--> 
+              <div class="form-group">
+                <label for="number" >Number :</label>
+                <input type="text" class="form-control" name="inputnumber" placeholder="enter number">
+              </div> <!--form group ends-->    
+              <div class="form-group">
+              <label for="name" >Email :</label>
+                <input type="email" class="form-control" name="inputemail" placeholder="enter email">
+              </div>    
+
+          </div>
+          <div class="modal-footer">
+          <input class="btn btn-secondary" type="submit" name="addContact" value="Add contact" >
+          <input class="btn btn-danger" type="submit" name="cancel" value="cancel" data-dismiss="modal" area-label="Close"  >
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+
+    <!-- ################################################################################################################################################################################################# -->
           
             
                 
@@ -145,7 +179,7 @@ include_once('process.php');
                             <td><?php echo "0".$row['number'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td>
-                              <button class="btn btn-success" type="button">EDIT</button>
+                              <button class="btn btn-success editbtn" type="button" data-target="#editContactModal" data-toggle="modal">EDIT</button>
                             </td>
                             <td>
                               <button class="btn btn-danger" type="button">DELETE</button>
@@ -176,5 +210,17 @@ include_once('process.php');
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  <script>
+  
+  $(document).ready(function(){
+    $(.editbtn).on('click',function(){
+      $('#editModal').modal('show');
+
+    });
+
+  });
+          
+  </script>
   </body>
 </html>
