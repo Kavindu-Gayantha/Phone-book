@@ -5,8 +5,19 @@
         $name=$_POST['inputname'];
         $number=$_POST['inputnumber'];
         $email=$_POST['inputemail'];
-       // $result = mysqli -> query("SELECT * FROM data") or die(mysqli->error);
-        $mysqli->query("INSERT INTO data(name,number,email)VALUES('$name','$number','$email');") ;
+        
+        $insertQuery = "INSERT INTO data (name,number,email) VALUES ('$name','0$number','$email')";
+        $query_run = mysqli_query($connection,$insertQuery);
+
+        if($query_run)
+        {
+            echo "<script>alert('number added');</script>";
+            header("Location:index.php");
+        }
+        else 
+        {
+            echo "<script>alert('number not added!!!');</script>";
+        }
 
     }
 ?>

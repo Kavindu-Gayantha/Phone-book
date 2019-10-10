@@ -85,7 +85,7 @@ include_once('process.php');
           </div><!-- header ends-->
           <div class="modal-body">
             <!-- form here -->
-            <form action="index.php" method="POST">
+            <form action="process.php" method="POST">
               <div class="form-group">
                 <label for="name" >Name :</label>
                 <input type="text" class="form-control" name="inputname" placeholder="enter name">
