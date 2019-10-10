@@ -119,20 +119,20 @@ include_once('process.php');
             <form action="process.php" method="POST">
               <div class="form-group">
                 <label for="name" >Name :</label>
-                <input type="text" class="form-control" name="inputname" placeholder="enter name">
+                <input type="text" class="form-control" id="updateName" name="inputname" placeholder="enter name">
               </div> <!--form group ends--> 
               <div class="form-group">
                 <label for="number" >Number :</label>
-                <input type="text" class="form-control" name="inputnumber" placeholder="enter number">
+                <input type="text" class="form-control" name="inputnumber" id="updateNumber" placeholder="enter number">
               </div> <!--form group ends-->    
               <div class="form-group">
               <label for="name" >Email :</label>
-                <input type="email" class="form-control" name="inputemail" placeholder="enter email">
+                <input type="email" class="form-control" name="inputemail" id="updateEmail" placeholder="enter email">
               </div>    
 
           </div>
           <div class="modal-footer">
-          <input class="btn btn-secondary" type="submit" name="addContact" value="Add contact" >
+          <input class="btn btn-secondary" type="submit" name="addContact" value="Edit Contact" >
           <input class="btn btn-danger" type="submit" name="cancel" value="cancel" data-dismiss="modal" area-label="Close"  >
   
             </form>
@@ -179,7 +179,7 @@ include_once('process.php');
                             <td><?php echo "0".$row['number'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td>
-                              <button class="btn btn-success editbtn" type="button" data-target="#editContactModal" data-toggle="modal">EDIT</button>
+                              <button class="btn btn-success " id="editbtn" type="button" >EDIT</button>
                             </td>
                             <td>
                               <button class="btn btn-danger" type="button">DELETE</button>
@@ -213,9 +213,22 @@ include_once('process.php');
   
   <script>
   
-  $(document).ready(function(){
-    $(.editbtn).on('click',function(){
+  $( ).ready(function(){
+    $('#editbtn').on('click',function(){
+     
       $('#editModal').modal('show');
+
+      $tr = $(this).closest('tr');
+      
+      var data = $tr.children('td').map(function(){
+        return $(this).text();
+      }).get();
+
+      console.log(data);
+      // $('#updateId').val(data[0]);
+      $('#updateName').val(data[0]);
+      $('#updateNumber').val(data[1]);
+      $('#updateEmail').val(data[2]);
 
     });
 
