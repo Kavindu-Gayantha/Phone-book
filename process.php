@@ -6,7 +6,7 @@
         $number=$_POST['inputnumber'];
         $email=$_POST['inputemail'];
         
-        $insertQuery = "INSERT INTO data (name,number,email) VALUES ('$name','0$number','$email')";
+        $insertQuery = "INSERT INTO data (name,number,email) VALUES ('$name','$number','$email')";
         $query_run = mysqli_query($connection,$insertQuery);
 
         if($query_run)

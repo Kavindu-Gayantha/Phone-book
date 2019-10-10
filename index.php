@@ -123,30 +123,41 @@ include_once('process.php');
                 <thead class="text-success font-weight-bold text-uppercase">
                     <tr>
                         <th class="col-1" scope="col">[#]</th>
-                        <th class="col" scope="col">[contact]</th>
+                        <th class="col text-center" scope="col" colspan="2">[   contact   ]</th>
                         <th class="col-1" scope="col">Edit</th>
                         <th class="col-1" scope="col">Delete</th>
                     </tr>
                 </thead>
+
+      <?php
+        $queryRead = "SELECT * FROM data";  // select query
+        $query_run = mysqli_query($connection,$queryRead);
+
+        if($query_run)
+        {
+          foreach($query_run as $row)
+          {
+      ?>
                 <tbody>
                     <tr>
-                            <th scope="row">[]</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><?php echo $row['ID'];?></th>
+                            <td><?php echo $row['name'];?></td>
+                            <td><?php echo $row['number'];?></td>
+                            <td>edit</td>
+                            <td>delete</td>
                     </tr>
-                    <tr>
-                            <th scope="row">[]</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">[]</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                  
                 </tbody>
+      <?php 
+            }
+          }
+          else
+          {
+            echo "no record found";
+          }
+          
+          
+      ?>
             </table>
         </div>
 
