@@ -116,7 +116,8 @@ include_once('process.php');
           </div><!-- header ends-->
           <div class="modal-body">
             <!-- form here -->
-            <form action="process.php" method="POST">
+            <form action="updatecontact.php" method="POST">
+            <input type="hidden" name="update_id" id="update_id">
               <div class="form-group">
                 <label for="name" >Name :</label>
                 <input type="text" class="form-control" id="updateName" name="inputname" placeholder="enter name">
@@ -132,7 +133,7 @@ include_once('process.php');
 
           </div>
           <div class="modal-footer">
-          <input class="btn btn-secondary" type="submit" name="addContact" value="Edit Contact" >
+          <input class="btn btn-secondary" type="submit" name="updateContact" value="Edit Contact" >
           <input class="btn btn-danger" type="submit" name="cancel" value="cancel" data-dismiss="modal" area-label="Close"  >
   
             </form>
@@ -225,10 +226,10 @@ include_once('process.php');
       }).get();
 
       console.log(data);
-      // $('#updateId').val(data[0]);
-      $('#updateName').val(data[0]);
-      $('#updateNumber').val(data[1]);
-      $('#updateEmail').val(data[2]);
+      $('#update_id').val(data[0]);
+      $('#updateName').val(data[1]);
+      $('#updateNumber').val(data[2]);
+      $('#updateEmail').val(data[3]);
 
     });
 
