@@ -123,7 +123,7 @@ include_once('process.php');
                 <thead class="text-success font-weight-bold text-uppercase">
                     <tr>
                         <th class="col-1" scope="col">[#]</th>
-                        <th class="col text-center" scope="col" colspan="2">[   contact   ]</th>
+                        <th class="col text-center" scope="col" colspan="3">[   contact   ]</th>
                         <th class="col-1" scope="col">Edit</th>
                         <th class="col-1" scope="col">Delete</th>
                     </tr>
@@ -142,7 +142,8 @@ include_once('process.php');
                     <tr>
                             <th scope="row"><?php echo $row['ID'];?></th>
                             <td><?php echo $row['name'];?></td>
-                            <td><?php echo $row['number'];?></td>
+                            <td><?php echo "0".$row['number'];?></td>
+                            <td><?php echo $row['email'];?></td>
                             <td>edit</td>
                             <td>delete</td>
                     </tr>
